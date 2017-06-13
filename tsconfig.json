@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "pretty": false,
+    "removeComments": true,
+    "importHelpers": true,
+    "outDir": "lib",
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ],
+    "lib": [
+      "ES2015",
+      "ES2016"
+    ]
+  },
+  "include": [
+    "src",
+    "types"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  },
+  "compileOnSave": false
+}

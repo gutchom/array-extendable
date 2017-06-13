@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "target": "ES2015",
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "pretty": true,
+    "removeComments": false,
+    "outDir": "../dev"
+  },
+  "include": [
+    "**/*.test.ts",
+    "../types"
+  ]
+}
