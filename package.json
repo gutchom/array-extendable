@@ -1,7 +1,7 @@
 {
   "name": "array-extendable",
   "version": "1.0.0",
-  "description": "benchmark toolkit",
+  "description": "Extending methods and properties of Array",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -29,5 +29,8 @@
     "rimraf": "^2.6.1",
     "tslint": "^5.4.2",
     "typescript": "^2.3.4"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }

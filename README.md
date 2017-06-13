@@ -10,13 +10,18 @@ Let's choose the extension which you want.
 ```
 import extend, {dedupe, nth, last} from 'array-extendable'
 
-extend(unique, nth, last)
+// Activating the extensions
+extension.attach(dedupe, nth, last)
+
+// Deactivating the extensions
+extension.attach('dedupe', 'last')
 ```
 
 What can do?
 ---
 5 extensions are available.
 
+### Extensions
 - `head`
   - Property of alias to first index.
 - `last`
