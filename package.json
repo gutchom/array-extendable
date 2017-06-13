@@ -1,6 +1,6 @@
 {
   "name": "array-extendable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extending methods and properties of Array",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
