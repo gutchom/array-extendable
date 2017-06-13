@@ -8,7 +8,7 @@ Let's choose the extension which you want.
 
 ### For example
 ```
-import extend, {dedupe, nth, last} from 'array-extendable'
+import extension, {dedupe, nth, last} from 'array-extendable'
 
 // Activating the extensions
 extension.attach(dedupe, nth, last)
