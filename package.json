@@ -31,6 +31,7 @@
     "typescript": "^2.3.4"
   },
   "files": [
-    "lib"
+    "lib",
+    "types"
   ]
 }
