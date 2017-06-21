@@ -1,50 +1,48 @@
 import test from 'ava'
-import extension, {head, last, nth, unique, duplicates} from '../src'
+import activate, {last, nth, uniques, dupes, dedupe} from '../src'
 
 function createArray() {
   return [1, 2, 2, 3, 3, 3, 4]
 }
 
 test.before(t => {
-  extension.attach(head, last, nth, unique, duplicates)
+  activate(last, nth, uniques, dupes, dedupe)
 })
 
-test('Array#head works as first index', t => {
-  const array = createArray()
-
-  t.is(array.head, array[0])
-})
-
-test('Array#last works as last index', t => {
+test('Array#last works as last property', t => {
   const array = createArray()
 
   t.is(array.last, array[array.length - 1])
 })
 
-test('Array#nth() able to access from last index with negative value', t => {
+test('Array#nth() can access property with negative index', t => {
   const array = createArray()
 
-  t.is(array.nth(-2), array[5])
+  t.is(array.nth[-2], array[5])
 })
 
-test('Array#unique() removes duplicated values', t => {
+test('Array#nth() can overwrite property', t => {
   const array = createArray()
 
-  t.deepEqual(array.unique(), [1, 2, 3, 4])
+  array.nth[-2] = 999
+
+  t.is(array.nth[-2], 999)
 })
 
-test('Array#duplicates() extracts duplicated values', t => {
+test('Array#unique() extracts never duplicated values', t => {
   const array = createArray()
 
-  t.deepEqual(array.duplicates(), [2, 2, 3, 3, 3])
+  t.deepEqual(array.uniques(), [1, 4])
 })
 
-test('ExtensionManager detaches a extension', t => {
+test('Array#dupes() extracts duplicated values', t => {
   const array = createArray()
 
-  t.truthy(array.head)
+  t.deepEqual(array.dupes(), [2, 2, 3, 3, 3])
+})
 
-  extension.detach('head')
+test('Array#dedupe() removes duplicated values', t => {
+  const array = createArray()
 
-  t.falsy(array.head)
+  t.deepEqual(array.dedupe(), [1, 2, 3, 4])
 })
